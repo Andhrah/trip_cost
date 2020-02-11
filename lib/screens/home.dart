@@ -7,6 +7,8 @@ class FuelForm extends StatefulWidget {
 
 class _FuelFormState extends State<FuelForm> {
   final _currencies = ['Dollars', 'Euro', 'Pounds', 'Naira'];
+
+  final double _formDistance = 5.0;
   String _currency = 'Dollars';
 
   // TextEditingController works the way as onchanged event listener method.
@@ -29,56 +31,71 @@ class _FuelFormState extends State<FuelForm> {
       padding: EdgeInsets.all(15.0),
       child: Column(
         children: <Widget>[
-          TextField(
-            controller: distanceController,
-            decoration: InputDecoration(
-              labelText: 'Distance',
-              hintText: 'e.g. 123',
-              labelStyle: textStyle,
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(5.0),
-              )
+          Padding(
+            padding: EdgeInsets.only(top: _formDistance, 
+            bottom: _formDistance
             ),
-            keyboardType: TextInputType.number,
-            // onChanged: (String string) {
-            //   setState(() {
-            //     name = string;
-            //   });
-            // },
+            child: TextField(
+              controller: distanceController,
+              decoration: InputDecoration(
+                labelText: 'Distance',
+                hintText: 'e.g. 123',
+                labelStyle: textStyle,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(5.0),
+                )
+              ),
+              keyboardType: TextInputType.number,
+              // onChanged: (String string) {
+              //   setState(() {
+              //     name = string;
+              //   });
+              // },
+            ),
           ),
-          TextField(
-            controller: avgController,
-            decoration: InputDecoration(
-              labelText: 'Distance per Unit',
-              hintText: 'e.g. 17',
-              labelStyle: textStyle,
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(5.0),
-              )
+          Padding(
+            padding: EdgeInsets.only(top: _formDistance, 
+            bottom: _formDistance
             ),
-            keyboardType: TextInputType.number,
-            // onChanged: (String string) {
-            //   setState(() {
-            //     name = string;
-            //   });
-            // },
+            child:TextField(
+              controller: avgController,
+              decoration: InputDecoration(
+                labelText: 'Distance per Unit',
+                hintText: 'e.g. 17',
+                labelStyle: textStyle,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(5.0),
+                )
+              ),
+              keyboardType: TextInputType.number,
+              // onChanged: (String string) {
+              //   setState(() {
+              //     name = string;
+              //   });
+              // },
+            ),
           ),
-          TextField(
-            controller: priceController,
-            decoration: InputDecoration(
-              labelText: 'Price',
-              hintText: 'e.g. 1.65',
-              labelStyle: textStyle,
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(5.0),
-              )
+          Padding(
+            padding: EdgeInsets.only(top: _formDistance, 
+            bottom: _formDistance
             ),
-            keyboardType: TextInputType.number,
-            // onChanged: (String string) {
-            //   setState(() {
-            //     name = string;
-            //   });
-            // },
+            child:TextField(
+              controller: priceController,
+              decoration: InputDecoration(
+                labelText: 'Price',
+                hintText: 'e.g. 1.65',
+                labelStyle: textStyle,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(5.0),
+                )
+              ),
+              keyboardType: TextInputType.number,
+              // onChanged: (String string) {
+              //   setState(() {
+              //     name = string;
+              //   });
+              // },
+            ),
           ),
           DropdownButton<String>(
             items: _currencies.map((String value){
