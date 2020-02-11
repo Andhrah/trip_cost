@@ -11,6 +11,8 @@ class _FuelFormState extends State<FuelForm> {
 
   // TextEditingController works the way as onchanged event listener method.
   TextEditingController distanceController = TextEditingController();
+  TextEditingController avgController = TextEditingController();
+  TextEditingController priceController = TextEditingController();
 
     String result = '';
 
@@ -32,6 +34,40 @@ class _FuelFormState extends State<FuelForm> {
             decoration: InputDecoration(
               labelText: 'Distance',
               hintText: 'e.g. 123',
+              labelStyle: textStyle,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(5.0),
+              )
+            ),
+            keyboardType: TextInputType.number,
+            // onChanged: (String string) {
+            //   setState(() {
+            //     name = string;
+            //   });
+            // },
+          ),
+          TextField(
+            controller: avgController,
+            decoration: InputDecoration(
+              labelText: 'Distance per Unit',
+              hintText: 'e.g. 17',
+              labelStyle: textStyle,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(5.0),
+              )
+            ),
+            keyboardType: TextInputType.number,
+            // onChanged: (String string) {
+            //   setState(() {
+            //     name = string;
+            //   });
+            // },
+          ),
+          TextField(
+            controller: priceController,
+            decoration: InputDecoration(
+              labelText: 'Price',
+              hintText: 'e.g. 1.65',
               labelStyle: textStyle,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(5.0),
@@ -75,9 +111,12 @@ class _FuelFormState extends State<FuelForm> {
     )
   );
   }
-  _onDropdownChanged(String value) {
+
+  void _onDropdownChanged(String value) {
     setState(() {
       this._currency = value;
     });
   }
+
+  
 }
