@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
-class HelloYou extends StatefulWidget {
+class FuelForm extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => _HelloYouState();
+  State<StatefulWidget> createState() => _FuelFormState();
 }
 
-class _HelloYouState extends State<HelloYou> {
+class _FuelFormState extends State<FuelForm> {
   String name = '';
   final _currencies = ['Dollars', 'Euro', 'Pounds', 'Naira'];
   String _currency = 'Dollars';
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,24 +25,25 @@ class _HelloYouState extends State<HelloYou> {
             decoration: InputDecoration(
               hintText: 'Please insert your name',
             ),
+            keyboardType: TextInputType.number,
             onChanged: (String string) {
               setState(() {
                 name = string;
               });
             },
           ),
-          DropdownButton<String>(
-            items: _currencies.map((String value){
-              return DropdownMenuItem<String> (
-                value: value,
-                child: Text(value)
-              );
-            }).toList(),
-            value: _currency,
-            onChanged: (String value) {
-              _onDropdownChanged(value);
-            },
-            ),
+          // DropdownButton<String>(
+          //   items: _currencies.map((String value){
+          //     return DropdownMenuItem<String> (
+          //       value: value,
+          //       child: Text(value)
+          //     );
+          //   }).toList(),
+          //   value: _currency,
+          //   onChanged: (String value) {
+          //     _onDropdownChanged(value);
+          //   },
+          //   ),
           Text('Hello ' + name + '!')
         ],
       )
