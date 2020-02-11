@@ -9,9 +9,10 @@ class _FuelFormState extends State<FuelForm> {
   String name = '';
   final _currencies = ['Dollars', 'Euro', 'Pounds', 'Naira'];
   String _currency = 'Dollars';
-  
+
   @override
   Widget build(BuildContext context) {
+      TextStyle textStyle = Theme.of(context).textTheme.title;
     return Scaffold(
     appBar: AppBar(
       title: Text("Hello"),
@@ -23,7 +24,12 @@ class _FuelFormState extends State<FuelForm> {
         children: <Widget>[
           TextField(
             decoration: InputDecoration(
-              hintText: 'Please insert your name',
+              labelText: 'Distance',
+              hintText: 'e.g. 123',
+              labelStyle: textStyle,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(5.0),
+              )
             ),
             keyboardType: TextInputType.number,
             onChanged: (String string) {
@@ -50,9 +56,9 @@ class _FuelFormState extends State<FuelForm> {
     )
   );
   }
-  _onDropdownChanged(String value) {
-    setState(() {
-      this._currency = value;
-    });
-  }
+  // _onDropdownChanged(String value) {
+  //   setState(() {
+  //     this._currency = value;
+  //   });
+  // }
 }
