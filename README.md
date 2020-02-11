@@ -1,6 +1,6 @@
 # trip_cost
 
-A new Flutter project.
+Trip Cost Calculator app is an app for calculating the cost of any trip by on distance, distance per unit and price. It also demonstrate how to use stateful widgets.
 
 ## Getting Started
 
